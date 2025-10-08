@@ -8,7 +8,7 @@ const Lock = ({ onUnlock }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (input === "09-10-2025") {
+    if (input === "14-10-2025") {
       onUnlock();
     } else {
       setError("❌ Wrong password! Try again.");
