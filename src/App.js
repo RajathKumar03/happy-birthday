@@ -34,10 +34,11 @@ function App() {
   return (
     <Router>
       {/* Global background music */}
-      <audio ref={audioRef} loop>
-        <source src="/audio/birthday-music.mp3" type="audio/mp3" />
+      <audio ref={audioRef} loop autoPlay>
+        <source src={`${process.env.PUBLIC_URL}/audio/birthday-music.mp3`} type="audio/mp3" />
         Your browser does not support the audio element.
       </audio>
+
 
       <Routes>
         {/* Countdown page */}
