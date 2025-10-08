@@ -13,7 +13,7 @@ function App() {
   const audioRef = useRef(null); // 🎵 Global audio
   const [musicStarted, setMusicStarted] = useState(false);
 
-  const targetTime = new Date("2025-10-14T00:00:00");
+  const targetTime = new Date("2025-10-08T00:00:00");
   const currentTime = new Date();
 
   const showCountdown = currentTime < targetTime;
