@@ -5,9 +5,9 @@ import "./../css/SpecialBirthdayPage.css";
 import Cake from "./../components/Cake";
 
 const images = [
-    "/images/img1.jpg",
-    "/images/img2.jpg",
-    "/images/img3.jpg",
+    process.env.PUBLIC_URL + "/images/img1.jpg",
+  process.env.PUBLIC_URL + "/images/img2.jpg",
+  process.env.PUBLIC_URL + "/images/img3.jpg",
 ];
 
 const SpecialBirthdayPage = () => {
