@@ -1,0 +1,71 @@
+.countdown {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(circle at top, #ff9a9e, #fad0c4);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+.countdown h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.4);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.countdown h2 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  background: -webkit-linear-gradient(#fff, #ffe57f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.countdown p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #ff80ab, 0 0 10px #ff4081;
+  }
+  to {
+    text-shadow: 0 0 15px #ff80ab, 0 0 25px #ff4081;
+  }
+}
+
+/* 🎈 Optional floating bubble animation for background */
+.countdown::before,
+.countdown::after {
+  content: "";
+  position: absolute;
+  top: -50px;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: float 10s infinite ease-in-out alternate;
+}
+
+.countdown::after {
+  left: 60%;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    transform: translateY(800px) scale(1.5);
+    opacity: 0;
+  }
+}

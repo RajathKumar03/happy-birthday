@@ -1,0 +1,120 @@
+.birthday-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
+  transition: background-image 0.5s ease-in-out;
+}
+
+/* Landscape background */
+@media (orientation: landscape) {
+  .birthday-page {
+    background-image: url('../assets/hb-bg1-land.jpg');
+  }
+}
+
+/* Portrait background */
+@media (orientation: portrait) {
+  .birthday-page {
+    background-image: url('../assets/hb-bg1-port.jpg');
+  }
+}
+
+/* Optional: make card responsive inside page */
+.birthday-page > * {
+  z-index: 2;
+}
+
+/* Confetti is automatically handled by react-confetti using window size */
+.game-btn {
+  position: fixed; /* stays in corner */
+  bottom: 30px;
+  right: 30px;
+  padding: 14px 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px; /* pill shape for fun */
+  border: none;
+  background: linear-gradient(135deg, #ff5f6d, #ffc371); /* birthday colors */
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+/* Hover effect */
+.game-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(255, 95, 109, 0.6);
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.gift-btn {
+  left: 40px;
+  width: 200px;
+  background-color: gold;
+  color: white;
+}
+
+.popup-overlay {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.5);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.popup-content {
+  background: white;
+  padding: 2em;
+  border-radius: 1em;
+  text-align:center;
+  position: relative;
+}
+
+.popup-buttons {
+  display:flex;
+  gap: 1em;
+  justify-content:center;
+  margin-top: 1em;
+  position: relative;
+}
+
+.yes-btn, .no-btn {
+  padding: 0.5em 1em;
+  border-radius:0.5em;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.1s ease;
+}
+
+/* Gift button adjustments for mobile */
+@media (max-width: 480px) {
+  .gift-btn {
+    position: fixed;        /* ensure it stays visible */
+    bottom: 90px;           /* slightly higher from bottom */
+    left: 50%;              /* center horizontally */
+    transform: translateX(-50%); /* perfectly center */
+    width: 150px;           /* smaller width for mobile */
+    padding: 12px 20px;     /* adjust padding */
+    font-size: 1rem;        /* slightly smaller font */
+    border-radius: 40px;    /* maintain pill shape */
+  }
+}
